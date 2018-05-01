@@ -4,17 +4,21 @@ Demo showing how to do environment specific configuration in .Net Core
 
 ## Introduction
 
-In the `Config` folder are three files:
+In the `EnvironmentConfig/Config` folder are three files:
 
 * appsettings.json
 * appsettings.Staging.CA.json
 * appsettings.Staging.UK.json
 
-The `ConfigurationLoader` class is set up using the new `ConfigurationBuilder` logic in .Net Core, which lets us load multiple json config files.
+The `ConfigurationLoader` class is set up using the new `ConfigurationBuilder` logic in .Net Core to load these files based on the programs arguments.
 
 The `appsettings.json` is the default, whilst any keys present in the overrides like `appsettings.Staging.CA.json` will overwrite the defaults for us.
 
 The arguments specifying which environment and tenant we are in are passed to the program, e.g:
+
+```bash
+dotnet run Staging CA
+```
 
 ## Prerequisites
 
